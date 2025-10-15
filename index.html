@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Web Sederhana Tein</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Tein</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#schedule" class="nav-link">Schedule</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Notes <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="html-css-js.html" class="dropdown-link">Web Tech</a></li>
+                        <li><a href="tutorial.html" class="dropdown-link">Tutorial</a></li>
+                        <li><a href="kesan-pesan.html" class="dropdown-link">My Impression</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-card" id="home">
+            <div class="header">                
+                <div class="profile-photo">
+                    <img src="apalo.jpg" alt="Foto Profil Christein" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                </div>
+                <h1>Christein Akadojuanich Habayaki Purba</h1>
+                <p class="subtitle">Mahasiswa Universitas Sumatera Utara - Made in Indonesia</p>
+            </div>
+
+            <div class="content">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3>NIM</h3>
+                        <p>241401012</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Program Studi</h3>
+                        <p>Ilmu Komputer</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Hobi</h3>
+                        <p>Gaming, Baca komik/novel</p>
+                    </div>
+                </div>                
+                <div class="motto">
+                    Just keep swimming - Dori
+                </div>
+
+                <div class="section" id="about">
+                    <h2>About Me</h2>
+                    <div class="about-me">
+                        <p>
+                            Senang dengan hal kompetitif. Pernah menang lomba makan kerupuk.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section" id="gallery">
+                    <h2>Gallery</h2>                    
+                    <div class="gallery-carousel">
+                        <button class="carousel-btn carousel-prev" id="prevBtn">‹</button>
+                        <div class="gallery-container">
+                            <div class="gallery-track">
+                                <div class="gallery-item">
+                                    <div class="gallery-photo">
+                                        <img src="Galery/Kucing.jpg" alt="Foto Kucing" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <p class="gallery-caption">Pencuri ikan sedang tidur nyenyak tanpa merasa bersalah</p>
+                                </div>
+                                <div class="gallery-item">
+                                    <div class="gallery-photo">
+                                        <img src="Galery/Menatap masa depan.jpg" alt="Menatap Masa Depan" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <p class="gallery-caption">Sedang menatap masa depan, yang penuh dengan harapan</p>
+                                </div>
+                                <div class="gallery-item">
+                                    <div class="gallery-photo">
+                                        <img src="Galery/ML.jpg" alt="Mobile Legends" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <p class="gallery-caption">Salah satu game kompetitif yang saya senangi. Ayo mabar, ID:224421765.</p>
+                                </div>
+                                <div class="gallery-item">
+                                    <div class="gallery-photo">
+                                        <img src="Galery/Perancisia.jpg" alt="Perancis" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <p class="gallery-caption">Hasil potret Menara Eiffel pada pagi hari di Paris</p>
+                                </div>
+                                <div class="gallery-item">
+                                    <div class="gallery-photo">
+                                        <img src="Galery/Perjalan.jpg" alt="Perjalanan" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <p class="gallery-caption">Dalam perjalanan menuju kesuksesan. Amin</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-next" id="nextBtn">›</button>
+                    </div>
+                </div>
+
+                <div class="section" id="schedule">
+                    <h2>Schedule</h2>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Hari</th>
+                                <th>Jam</th>
+                                <th>Mata Kuliah</th>
+                                <th>Ruangan</th>
+                                <th>Pengajar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Senin</td>
+                                <td>10:30 - 12:10</td>
+                                <td>Basic Speaking</td>
+                                <td>F.203</td>
+                                <td>Puan Maharani S.Hum., M.A</td>
+                            </tr>
+                            <tr>
+                                <td>Senin</td>
+                                <td>14:50 - 16:30</td>
+                                <td>Praktikum Pemograman Web</td>
+                                <td>Lab 2</td>
+                                <td>Bang Dzakwan</td>
+                            </tr>
+                            <tr>
+                                <td>Selasa</td>
+                                <td>08:50 - 10:30</td>
+                                <td>IELTS Preparation</td>
+                                <td>D-101</td>
+                                <td>Drs. Yulianus Harefa GradDipEd TESOL., MEd TESOL</td>
+                            </tr>
+                            <tr>
+                                <td>Selasa</td>
+                                <td>12:10 - 13:50</td>
+                                <td>Praktikum Struktur Data</td>
+                                <td>Lab 2</td>
+                                <td>Kak Parulian</td>
+                            </tr>
+                            <tr>
+                                <td>Selasa</td>
+                                <td>14:40 - 16:20</td>
+                                <td>Praktikum Basis Data</td>
+                                <td>Lab 1</td>
+                                <td>Bang Frederick</td>
+                            </tr>
+                            <tr>
+                                <td>Rabu</td>
+                                <td>08:00 - 10:30</td>
+                                <td>Struktur Data</td>
+                                <td>D-104</td>
+                                <td>Anandhini Medianty Nababan S.Kom., M.T</td>
+                            </tr>
+                            <tr>
+                                <td>Rabu</td>
+                                <td>10:30 - 13:00</td>
+                                <td>Kecerdasan Buatan</td>
+                                <td>D-105</td>
+                                <td>Dr. Pauzi Ibrahim Nainggolan S.Komp., M.Sc.</td>
+                            </tr>
+                            <tr>
+                                <td>Rabu</td>
+                                <td>13:00 - 14:40</td>
+                                <td>Etika Profesi</td>
+                                <td>D-102</td>
+                                <td>Dr. Ir. Elviawaty Muisa Zamzami S.T., M.T., M.M., IPU</td>
+                            </tr>
+                            <tr>
+                                <td>Rabu</td>
+                                <td>14:40 - 17:10</td>
+                                <td>Pemograman Web</td>
+                                <td>D-102</td>
+                                <td>Dr. Dewi Sartika Br Ginting S.Kom., M.Kom</td>
+                            </tr>
+                            <tr>
+                                <td>Jumat</td>
+                                <td>08:00 - 10:30</td>
+                                <td>Basis Data</td>
+                                <td>D-101</td>
+                                <td>Insidini Fawwaz M.Kom</td>
+                            </tr>
+                            <tr>
+                                <td>Jumat</td>
+                                <td>10:30 - 12:10</td>
+                                <td>Wirausaha Digital</td>
+                                <td> - </td>
+                                <td>Dr. T. Henny Febriana Harumy S.Kom., M.Kom</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>2025 - Website Profil Mahasiswa USU</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#8249;</button>
+            <button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
+            <img class="lightbox-image" id="lightbox-image" src="" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+</body>
+</html>

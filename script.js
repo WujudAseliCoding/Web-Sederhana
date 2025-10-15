@@ -1,4 +1,3 @@
-// Gallery Lightbox Functionality
 class GalleryLightbox {
     constructor() {
         this.lightbox = document.getElementById('lightbox');
@@ -28,17 +27,14 @@ class GalleryLightbox {
                     caption: caption ? caption.textContent : ''
                 });
                 
-                // Add click event to gallery photo
                 item.addEventListener('click', () => this.openLightbox(index));
             }
         });
         
-        // Event listeners
         this.closeBtn.addEventListener('click', () => this.closeLightbox());
         this.prevBtn.addEventListener('click', () => this.prevImage());
         this.nextBtn.addEventListener('click', () => this.nextImage());
         
-        // Close on background click
         this.lightbox.addEventListener('click', (e) => {
             if (e.target === this.lightbox) {
                 this.closeLightbox();
@@ -67,12 +63,12 @@ class GalleryLightbox {
         this.currentIndex = index;
         this.updateImage();
         this.lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        document.body.style.overflow = 'hidden';
     }
     
     closeLightbox() {
         this.lightbox.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scrolling
+        document.body.style.overflow = '';
     }
     
     prevImage() {
@@ -91,7 +87,6 @@ class GalleryLightbox {
         this.lightboxImage.alt = current.alt;
         this.lightboxCaption.textContent = current.caption;
         
-        // Hide nav buttons if only one image
         if (this.galleryImages.length <= 1) {
             this.prevBtn.style.display = 'none';
             this.nextBtn.style.display = 'none';
@@ -135,6 +130,25 @@ class Navbar {
         this.navLinks.forEach(link => {
             link.addEventListener('click', () => this.closeMobileMenu());
         });
+        
+        // Handle dropdown menu for mobile
+        this.initDropdownMenu();
+    }
+    
+    initDropdownMenu() {
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdown = document.querySelector('.dropdown');
+        
+        if (dropdownToggle && dropdown) {
+            dropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Toggle dropdown on mobile
+                if (window.innerWidth <= 768) {
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
     }
     
     toggleMobileMenu() {
@@ -148,19 +162,25 @@ class Navbar {
     }
     
     handleNavClick(e) {
-        e.preventDefault();
-        const targetId = e.target.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
+        const href = e.target.getAttribute('href');
         
-        if (targetSection) {
-            const navbarHeight = this.navbar.offsetHeight;
-            const targetPosition = targetSection.offsetTop - navbarHeight - 20;
+        // Only prevent default for internal anchor links (starting with #)
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetSection = document.getElementById(targetId);
             
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+            if (targetSection) {
+                const navbarHeight = this.navbar.offsetHeight;
+                const targetPosition = targetSection.offsetTop - navbarHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         }
+        // For external links (like index.html#home), let them work normally
     }
     
     updateActiveLink() {
@@ -189,3 +209,91 @@ class Navbar {
         });
     }
 }
+
+// Gallery Carousel Functionality
+class GalleryCarousel {
+    constructor() {
+        this.track = document.querySelector('.gallery-track');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        
+        this.currentSlide = 0;
+        this.totalImages = 5;
+        this.visibleImages = window.innerWidth <= 768 ? 1 : 3;
+        this.maxSlide = this.totalImages - this.visibleImages;
+        
+        this.init();
+    }
+    
+    init() {
+        if (!this.track) return;
+        
+        // Event listeners for buttons
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        
+        // Update on window resize
+        window.addEventListener('resize', () => this.handleResize());
+        
+        // Initial position
+        this.updateCarousel();
+    }
+    
+    prevSlide() {
+        if (this.currentSlide === 0) {
+            this.currentSlide = this.maxSlide;
+        } else {
+            this.currentSlide--;
+        }
+        this.updateCarousel();
+    }
+    
+    nextSlide() {
+        if (this.currentSlide >= this.maxSlide) {
+            this.currentSlide = 0;
+        } else {
+            this.currentSlide++;
+        }
+        this.updateCarousel();
+    }
+    
+    updateCarousel() {
+        if (!this.track) return;
+        
+        // Calculate transform based on screen size
+        let translateX;
+        if (window.innerWidth <= 768) {
+            translateX = -this.currentSlide * 100;
+        } else {
+            translateX = -this.currentSlide * 20;
+        }
+        
+        this.track.style.transform = `translateX(${translateX}%)`;
+    }
+    
+    handleResize() {
+        this.visibleImages = window.innerWidth <= 768 ? 1 : 3;
+        this.maxSlide = this.totalImages - this.visibleImages;
+        
+        if (this.currentSlide > this.maxSlide) {
+            this.currentSlide = this.maxSlide;
+        }
+        
+        this.updateCarousel();
+    }
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('.gallery-item')) {
+        new GalleryLightbox();
+    }
+    
+    if (document.querySelector('.navbar')) {
+        new Navbar();
+    }
+    
+    if (document.querySelector('.gallery-carousel')) {
+        new GalleryCarousel();
+    }
+});

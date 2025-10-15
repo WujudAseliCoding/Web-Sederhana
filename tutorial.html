@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Tutorial Membuat Website Sederhana</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Tein</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Back</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Notes <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="html-css-js.html" class="dropdown-link">Web Tech</a></li>
+                        <li><a href="tutorial.html" class="dropdown-link active">Tutorial</a></li>
+                        <li><a href="kesan-pesan.html" class="dropdown-link">My Impression</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-card">
+            <div class="header">
+                <h1>Tutorial Membuat Website Sederhana</h1>
+                <p class="subtitle">Panduan Step-by-Step dari Nol sampai Online</p>
+            </div>
+
+            <div class="content">
+                <!-- Persiapan -->
+                <div class="section">
+                    <h2>Persiapan Awal</h2>
+                    <div class="about-me">
+                        <h3>Tools yang Dibutuhkan:</h3>
+                        <div class="info-grid" style="margin-top: 20px;">
+                            <div class="info-item">
+                                <h3>Text Editor</h3>
+                                <p>VS Code, Sublime Text, atau Notepad++</p>
+                            </div>
+                            <div class="info-item">
+                                <h3>Web Browser</h3>
+                                <p>Chrome, Firefox, atau Edge</p>
+                            </div>
+                            <div class="info-item">
+                                <h3>File Manager</h3>
+                                <p>Windows Explorer atau File Explorer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 1 -->
+                <div class="section">
+                    <h2>Step 1: Buat Struktur Folder</h2>
+                    <div class="about-me">
+                        <p>Buat folder untuk project website Anda dengan struktur seperti ini:</p>
+                        <div style="background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 15px; font-family: monospace;">
+                            my-website/<br>
+                            ├── index.html<br>
+                            ├── style.css<br>
+                            ├── script.js<br>
+                            └── images/<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;└── foto-profil.jpg
+                        </div>
+                        
+                        <h3 style="margin-top: 20px;">Penjelasan:</h3>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><strong>index.html</strong> - Halaman utama website</li>
+                            <li><strong>style.css</strong> - File styling/tampilan</li>
+                            <li><strong>script.js</strong> - File JavaScript untuk interaktivitas</li>
+                            <li><strong>images/</strong> - Folder untuk menyimpan gambar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="section">
+                    <h2>Step 2: Buat File HTML Dasar</h2>
+                    <div class="about-me">
+                        <p>Buat file <strong>index.html</strong> dan masukkan kode berikut:</p>
+                        <div style="background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 15px; font-family: monospace; font-size: 14px; overflow-x: auto;">
+                            &lt;!DOCTYPE html&gt;<br>
+                            &lt;html lang="id"&gt;<br>
+                            &lt;head&gt;<br>
+                            &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                            &nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+                            &nbsp;&nbsp;&lt;title&gt;Website Saya&lt;/title&gt;<br>
+                            &nbsp;&nbsp;&lt;link rel="stylesheet" href="style.css"&gt;<br>
+                            &lt;/head&gt;<br>
+                            &lt;body&gt;<br>
+                            &nbsp;&nbsp;&lt;header&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Selamat Datang di Website Saya&lt;/h1&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Ini adalah website pertama saya!&lt;/p&gt;<br>
+                            &nbsp;&nbsp;&lt;/header&gt;<br>
+                            &nbsp;&nbsp;&lt;main&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Tentang Saya&lt;/h2&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Halo! Nama saya [Nama Anda]. Saya sedang belajar membuat website.&lt;/p&gt;<br>
+                            &nbsp;&nbsp;&lt;/main&gt;<br>
+                            &lt;/body&gt;<br>
+                            &lt;/html&gt;
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="section">
+                    <h2>Step 3: Tambahkan CSS Styling</h2>
+                    <div class="about-me">
+                        <p>Buat file <strong>style.css</strong> untuk styling:</p>
+                        <div style="background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 15px; font-family: monospace; font-size: 14px; overflow-x: auto;">
+                            /* Reset CSS */<br>
+                            * {<br>
+                            &nbsp;&nbsp;margin: 0;<br>
+                            &nbsp;&nbsp;padding: 0;<br>
+                            &nbsp;&nbsp;box-sizing: border-box;<br>
+                            }<br><br>
+                            
+                            /* Body styling */<br>
+                            body {<br>
+                            &nbsp;&nbsp;font-family: Arial, sans-serif;<br>
+                            &nbsp;&nbsp;line-height: 1.6;<br>
+                            &nbsp;&nbsp;background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);<br>
+                            &nbsp;&nbsp;min-height: 100vh;<br>
+                            }<br><br>
+                            
+                            /* Header styling */<br>
+                            header {<br>
+                            &nbsp;&nbsp;background: white;<br>
+                            &nbsp;&nbsp;padding: 40px;<br>
+                            &nbsp;&nbsp;text-align: center;<br>
+                            &nbsp;&nbsp;margin: 20px;<br>
+                            &nbsp;&nbsp;border-radius: 15px;<br>
+                            &nbsp;&nbsp;box-shadow: 0 10px 25px rgba(0,0,0,0.1);<br>
+                            }<br><br>
+                            
+                            /* Main content */<br>
+                            main {<br>
+                            &nbsp;&nbsp;background: white;<br>
+                            &nbsp;&nbsp;padding: 30px;<br>
+                            &nbsp;&nbsp;margin: 20px;<br>
+                            &nbsp;&nbsp;border-radius: 15px;<br>
+                            &nbsp;&nbsp;box-shadow: 0 10px 25px rgba(0,0,0,0.1);<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="section">
+                    <h2>Step 4: Tambahkan JavaScript</h2>
+                    <div class="about-me">
+                        <p>Buat file <strong>script.js</strong> untuk interaktivitas:</p>
+                        <div style="background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 15px; font-family: monospace; font-size: 14px; overflow-x: auto;">
+                            // Fungsi untuk menampilkan pesan<br>
+                            function showWelcome() {<br>
+                            &nbsp;&nbsp;alert('Selamat datang di website saya!');<br>
+                            }<br><br>
+                            
+                            // Jalankan saat halaman dimuat<br>
+                            document.addEventListener('DOMContentLoaded', function() {<br>
+                            &nbsp;&nbsp;console.log('Website berhasil dimuat!');<br>
+                            &nbsp;&nbsp;<br>
+                            &nbsp;&nbsp;// Tambahkan tombol interaktif<br>
+                            &nbsp;&nbsp;const header = document.querySelector('header');<br>
+                            &nbsp;&nbsp;const button = document.createElement('button');<br>
+                            &nbsp;&nbsp;button.textContent = 'Klik Saya!';<br>
+                            &nbsp;&nbsp;button.onclick = showWelcome;<br>
+                            &nbsp;&nbsp;header.appendChild(button);<br>
+                            });
+                        </div>
+                        
+                        <p style="margin-top: 15px;">Jangan lupa tambahkan link ke JavaScript di HTML:</p>
+                        <div style="background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 10px; font-family: monospace;">
+                            &lt;script src="script.js"&gt;&lt;/script&gt;
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="section">
+                    <h2>Step 5: Test dan Deploy</h2>
+                    <div class="about-me">
+                        <h3>Testing Lokal:</h3>
+                        <ol style="margin-left: 20px; margin-top: 10px;">
+                            <li>Buka file <strong>index.html</strong> di browser</li>
+                            <li>Periksa apakah semua styling dan JavaScript berfungsi</li>
+                            <li>Test di berbagai browser (Chrome, Firefox, Edge)</li>
+                            <li>Test responsive di mobile (F12 → Device toolbar)</li>
+                        </ol>
+                        
+                        <h3 style="margin-top: 20px;">Cara Deploy Online:</h3>
+                        <div class="info-grid" style="margin-top: 15px;">
+                            <div class="info-item">
+                                <h3>GitHub Pages</h3>
+                                <p>Gratis, mudah, upload ke GitHub repository</p>
+                            </div>
+                            <div class="info-item">
+                                <h3>Netlify</h3>
+                                <p>Drag & drop folder website</p>
+                            </div>
+                            <div class="info-item">
+                                <h3>Firebase</h3>
+                                <p>Google hosting dengan CLI tools</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>2025 - Tutorial Web Sederhana | <a href="index.html" style="color: white;">Kembali ke Home</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

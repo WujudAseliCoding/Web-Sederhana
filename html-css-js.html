@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Mengenal HTML, CSS, JavaScript & Tailwind</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Tein</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Back</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Notes <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="html-css-js.html" class="dropdown-link active">Web Tech</a></li>
+                        <li><a href="tutorial.html" class="dropdown-link">Tutorial</a></li>
+                        <li><a href="kesan-pesan.html" class="dropdown-link">My Impression</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-card">
+            <div class="header">
+                <h1>Mengenal Teknologi Web</h1>
+                <p class="subtitle">HTML, CSS, JavaScript & Tailwind CSS</p>
+            </div>
+
+            <div class="content">
+                <!-- HTML Section -->
+                <div class="section">
+                    <h2>HTML (HyperText Markup Language)</h2>
+                    <div class="about-me">
+                        <h3>Apa itu HTML?</h3>
+                        <p>HTML adalah bahasa markup yang digunakan untuk membuat struktur dasar halaman web. HTML menggunakan tag-tag untuk mendefinisikan elemen seperti heading, paragraf, link, gambar, dan lainnya.</p>
+                        
+                        <h3>Fungsi HTML:</h3>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>🏗️ Membuat struktur dan kerangka website</li>
+                            <li>📝 Menampilkan konten seperti teks, gambar, video</li>
+                            <li>🔗 Membuat hyperlink antar halaman</li>
+                            <li>📋 Membuat form input data</li>
+                        </ul>
+                        
+                        <h3>Contoh Kode HTML:</h3>
+                        <div style="background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 10px; font-family: monospace;">
+                            &lt;!DOCTYPE html&gt;<br>
+                            &lt;html&gt;<br>
+                            &nbsp;&nbsp;&lt;head&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Website Saya&lt;/title&gt;<br>
+                            &nbsp;&nbsp;&lt;/head&gt;<br>
+                            &nbsp;&nbsp;&lt;body&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Selamat Datang!&lt;/h1&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Ini adalah website pertama saya.&lt;/p&gt;<br>
+                            &nbsp;&nbsp;&lt;/body&gt;<br>
+                            &lt;/html&gt;
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS Section -->
+                <div class="section">
+                    <h2>CSS (Cascading Style Sheets)</h2>
+                    <div class="about-me">
+                        <h3>Apa itu CSS?</h3>
+                        <p>CSS adalah bahasa styling yang digunakan untuk mengatur tampilan dan layout halaman web. CSS mengontrol warna, font, spacing, animasi, dan responsive design.</p>
+                        
+                        <h3>Fungsi CSS:</h3>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>🎨 Mengatur warna, font, dan tampilan visual</li>
+                            <li>📐 Mengatur layout dan posisi elemen</li>
+                            <li>📱 Membuat website responsive untuk mobile</li>
+                            <li>✨ Menambahkan animasi dan efek interaktif</li>
+                        </ul>
+                        
+                        <h3>Contoh Kode CSS:</h3>
+                        <div style="background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 10px; font-family: monospace;">
+                            .header {<br>
+                            &nbsp;&nbsp;background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);<br>
+                            &nbsp;&nbsp;color: white;<br>
+                            &nbsp;&nbsp;padding: 40px;<br>
+                            &nbsp;&nbsp;text-align: center;<br>
+                            &nbsp;&nbsp;border-radius: 15px;<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JavaScript Section -->
+                <div class="section">
+                    <h2>JavaScript</h2>
+                    <div class="about-me">
+                        <h3>Apa itu JavaScript?</h3>
+                        <p>JavaScript adalah bahasa pemrograman yang membuat website menjadi interaktif dan dinamis. JavaScript dapat merespons klik user, mengubah konten secara real-time, dan berkomunikasi dengan server.</p>
+                        
+                        <h3>Fungsi JavaScript:</h3>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>🖱️ Menangani interaksi user (klik, hover, input)</li>
+                            <li>🔄 Mengubah konten website secara dinamis</li>
+                            <li>📡 Berkomunikasi dengan API dan database</li>
+                            <li>🎮 Membuat animasi dan game sederhana</li>
+                        </ul>
+                        
+                        <h3>Contoh Kode JavaScript:</h3>
+                        <div style="background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 10px; font-family: monospace;">
+                            function openLightbox(index) {<br>
+                            &nbsp;&nbsp;this.currentIndex = index;<br>
+                            &nbsp;&nbsp;this.updateImage();<br>
+                            &nbsp;&nbsp;this.lightbox.classList.add('active');<br>
+                            &nbsp;&nbsp;document.body.style.overflow = 'hidden';<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tailwind Section -->
+                <div class="section">
+                    <h2>Tailwind CSS</h2>
+                    <div class="about-me">
+                        <h3>Apa itu Tailwind CSS?</h3>
+                        <p>Tailwind CSS adalah utility-first CSS framework yang menyediakan kelas-kelas siap pakai untuk styling. Berbeda dengan CSS tradisional, Tailwind menggunakan kelas utility seperti "bg-blue-500" atau "text-center".</p>
+                        
+                        <h3>Keunggulan Tailwind:</h3>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>⚡ Development lebih cepat dengan utility classes</li>
+                            <li>📦 File size lebih kecil (hanya class yang dipakai)</li>
+                            <li>🎯 Konsistensi design system</li>
+                            <li>📱 Built-in responsive design</li>
+                        </ul>
+                        
+                        <h3>Perbandingan:</h3>
+                        <div style="background: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 10px; font-family: monospace;">
+                            <strong>CSS Tradisional:</strong><br>
+                            .button {<br>
+                            &nbsp;&nbsp;background-color: #3b82f6;<br>
+                            &nbsp;&nbsp;color: white;<br>
+                            &nbsp;&nbsp;padding: 12px 24px;<br>
+                            &nbsp;&nbsp;border-radius: 8px;<br>
+                            }<br><br>
+                            
+                            <strong>Tailwind CSS:</strong><br>
+                            &lt;button class="bg-blue-500 text-white px-6 py-3 rounded-lg"&gt;
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kesimpulan -->
+                <div class="section">
+                    <h2>Kesimpulan</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h3>HTML</h3>
+                            <p>Struktur & Konten</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>CSS</h3>
+                            <p>Styling & Layout</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>JavaScript</h3>
+                            <p>Interaktivitas & Logic</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Tailwind</h3>
+                            <p>Rapid Development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>© 2025 - Pembelajaran Pemrograman Web | <a href="index.html" style="color: white;">Kembali ke Home</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
